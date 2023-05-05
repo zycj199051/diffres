@@ -1,0 +1,20 @@
+[package]
+name = "diffres"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.71"
+clap = { version = "4.2.7", features = ["derive"] }
+console = "0.15.5"
+reqwest = { version = "0.11.17", default-features = false, features = ["rustls"] }
+serde_yaml = "0.9.21"
+serde = { version = "1.0.137", features = ["derive", "rc"] } # 引用serde并开启derive features
+serde_json = "1.0.81" # 用于serde<-->json
+similar = "2.2.1"
+tokio = { version = "1.28.0", features = ["full"] }
+http-serde = "1.1.2"
+url = { version = "2.3.1", features = ["serde"] }
+
