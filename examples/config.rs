@@ -9,10 +9,9 @@ fn main()->Result<()>{
     
     println!("get config data is:{:#?}",config);
 
-
    Ok(())
-   
     //get data-->caculate
     
 }
 
+1
