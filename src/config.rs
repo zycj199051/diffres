@@ -43,6 +43,12 @@ pub struct ResponseProfile {
 
 }
 
+
+pub struct DiffArgs {
+
+}
+
+
 impl Config {
     //从配置文件读
     pub async fn local_yaml(path:&str) -> Result<Self>{
@@ -54,9 +60,32 @@ impl Config {
     //从字符串读
     pub fn from_yaml(content:&str) -> anyhow::Result<Self>{
         
-        Ok(serde_yaml::from_str(content).unwrap())
+        Ok(serde_yaml::from_str(content)?)
         
     }
+
+    pub fn get_profile(&self,name:&str) -> Option<&Profile>{
+        //get map value
+        self.profile.get(name)
+    }
+    
+    
 }
 
+
+
+impl Profile {
+    pub async fn diff(&self,_args:DiffArgs)->Result<String> {
+        // let res1=req1.send(&args).await?;
+        // let res2=req2.send(&args).await?;
+
+        // let text1=res1.filter_text(&self.res).await?;
+        // let text2=res2.filter_text(&self.res).await?;
+
+        // text_diff(&text1,text2)
+        
+        todo!()
+    }
+
+}
 
